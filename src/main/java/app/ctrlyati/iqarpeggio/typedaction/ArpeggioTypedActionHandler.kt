@@ -19,12 +19,6 @@ class ArpeggioTypedActionHandler : TypedHandlerDelegate() {
 
         private var startLocation = 0
 
-        private const val ARPEGGIO_DELAY = 100L // ms
-        private const val MAX_ARPEGGIO = 10 // chars
-        private const val MIN_ARPEGGIO = 3 // chars
-
-        private const val STOP_CHAR = ' '
-
         fun clearType() {
             typed = ""
         }
@@ -74,8 +68,8 @@ class ArpeggioTypedActionHandler : TypedHandlerDelegate() {
 
     private fun getString(typed: String): TemplateImpl? {
         TemplateSettings.getInstance().templates
-            .filter { it.key.startsWith("iq>") }
-            .map { it.key.removePrefix("iq>") to it }
+            .filter { it.key.startsWith(TEMPLATE_PREFIX) }
+            .map { it.key.removePrefix(TEMPLATE_PREFIX) to it }
             .forEach {
                 println("compare ${it.first} to $typed")
                 if (isAnagram(typed, it.first)) {

@@ -16,6 +16,17 @@
 
         <typedHandler implementation="app.ctrlyati.iqarpeggio.typedaction.ArpeggioTypedActionHandler"/>
 
+        <applicationConfigurable groupId="app.ctrlyati.iqarpeggio" groupWeight="120"
+                                 instance="app.ctrlyati.iqarpeggio.setting.ApplicationSettingConfigurable"
+                                 id="iqarpeggio" displayName="Iq Arpeggio Setting">
+
+<!--            <configurable instance="app.ctrlyati.iqarpeggio.setting.ApplicationSettingConfigurable"-->
+<!--                          id="reference.com.my.settings.project"-->
+<!--                          bundle="messages.MySettingsBundle" key="com.my.settings.project"/>-->
+
+        </applicationConfigurable>
+
+
     </extensions>
 
     <actions>
