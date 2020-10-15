@@ -1,0 +1,31 @@
+<idea-plugin>
+    <id>app.ctrlyati.iqarpeggio</id>
+    <name>IqArpeggio</name>
+    <vendor email="ctrlyati@gmail.com" url="https://www.ctrlyati.app">Ctrlyati</vendor>
+
+    <description><![CDATA[
+    Hello this is iqArpeggio here.<br>
+    <em>the most musical way of coding</em>
+    ]]></description>
+
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+
+        <typedHandler implementation="app.ctrlyati.iqarpeggio.typedaction.ArpeggioTypedActionHandler"/>
+
+    </extensions>
+
+    <actions>
+        <group id="app.ctrlyati.iqarpeggio" text="IqArpeggio" popup="true">
+            <action id="app.ctrlyati.iqarpeggio.StartArpeggioAction" class="app.ctrlyati.iqarpeggio.StartArpeggioAction"
+                    text="Start Arpeggio" description="Start Arpeggio, listening keys in short duration">
+                <add-to-group group-id="app.ctrlyati.iqarpeggio" anchor="first"/>
+            </action>
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </group>
+
+    </actions>
+</idea-plugin>
